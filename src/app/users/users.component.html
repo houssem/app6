@@ -1,0 +1,18 @@
+<h1>Users</h1>
+
+
+<form class="example-form">
+    <input matInput placeholder="Favorite food" value="Sushi">
+</form>
+
+<ul [@listStagger]="users$">
+  <li *ngFor="let user of users">
+    <a routerLink="/details/{{user.id}}">{{user.name}}</a>
+
+    <ul>
+      <li>{{ user.email }}</li>
+      <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
+    </ul>
+    
+  </li>
+</ul>
